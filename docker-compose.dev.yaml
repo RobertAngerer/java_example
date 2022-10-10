@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+  flyway:
+    image: flyway/flyway:9
+    environment:
+      FLYWAY_URL: "jdbc:postgresql://postgres:5432/postgres"
+      FLYWAY_USER: postgres
+      FLYWAY_PASSWORD: postgres
+    command: migrate
+    volumes:
+      - ./src/main/resources/db/migration:/flyway/sql/
+    depends_on:
+      - postgres
+
+

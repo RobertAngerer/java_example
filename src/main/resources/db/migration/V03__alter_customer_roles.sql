@@ -1,0 +1,1 @@
+alter table customer_roles rename to company_role
