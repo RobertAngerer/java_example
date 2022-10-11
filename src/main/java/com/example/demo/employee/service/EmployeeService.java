@@ -3,6 +3,7 @@ package com.example.demo.employee.service;
 import com.example.demo.employee.model.Employee;
 import com.example.demo.employee.persistence.EmployeeEntityMapper;
 import com.example.demo.employee.persistence.EmployeeRepository;
+import com.example.demo.exception.NotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -20,8 +21,13 @@ public class EmployeeService {
     }
 
     public Employee save(Employee employee) {
-        return this.employeeEntityMapper.entityToModel(this.employeeEntityMapper.modelToEntity(employee));
+        return this.employeeEntityMapper.entityToModel(this.employeeRepository.save(this.employeeEntityMapper.modelToEntity(employee)));
     }
+
+    public Employee findById(UUID id) {
+        return this.employeeEntityMapper.entityToModel(this.employeeRepository.findById(id).orElseThrow(NotFoundException::new));
+    }
+
 
     public Employee associateWithRoles(Employee employee) {
         return null;

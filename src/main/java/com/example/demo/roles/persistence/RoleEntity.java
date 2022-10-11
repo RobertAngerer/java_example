@@ -23,6 +23,16 @@ public class RoleEntity {
     @ManyToMany(mappedBy = "roles")
     private Collection<EmployeeEntity> employees;
 
+    public RoleEntity() {
+    }
+
+    public RoleEntity(String role, CompanyEntity companyEntity, Collection<EmployeeEntity> employees) {
+        this.role = role;
+        this.companyEntity = companyEntity;
+        this.employees = employees;
+    }
+
+
     public UUID getId() {
         return id;
     }

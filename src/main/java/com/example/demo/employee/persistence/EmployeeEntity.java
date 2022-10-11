@@ -49,4 +49,12 @@ public class EmployeeEntity {
     public void setCompanyEntity(CompanyEntity companyEntity) {
         this.companyEntity = companyEntity;
     }
+
+    public Collection<RoleEntity> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<RoleEntity> roles) {
+        this.roles = roles;
+    }
 }

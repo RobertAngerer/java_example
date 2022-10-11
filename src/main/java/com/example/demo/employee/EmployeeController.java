@@ -38,18 +38,14 @@ public class EmployeeController {
     }
 
     @PostMapping("{company_id}/employees/{employee_id}/roles")
-    public EmployeeDto associateRoleWithEmployee(@PathVariable("company_id") UUID company_id, @PathVariable("employee_id") UUID employee_id, @RequestBody String[] roles) {
-        if (this.companyService.existsById(company_id)) {
-            throw new NotFoundException();
-        }
-        if (this.employeeService.existsById(employee_id)) {
-            throw new NotFoundException();
-        }
-
-        this.roleService.areValidRoles(roles, company_id)
-
-
-
+    public EmployeeDto associateRoleWithEmployee(@PathVariable("company_id") UUID company_id, @PathVariable("employee_id") UUID employee_id) {
+        String[] roles = new String[1];
+        roles[0] = "Software Dev";
+        roles[0] = roles[0].trim();
+        Company company = this.companyService.findById(company_id);
+        Employee employee = this.employeeService.findById(employee_id);
+        employee.setCompany(company);
+        return this.employeeDtoMapper.modelToDto(this.roleService.associateEmployeeWithRoles(employee, roles));
     }
 
 
