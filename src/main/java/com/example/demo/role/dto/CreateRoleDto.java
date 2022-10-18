@@ -1,4 +1,4 @@
-package com.example.demo.roles.dto;
+package com.example.demo.role.dto;
 
 public record CreateRoleDto(String role) {
 

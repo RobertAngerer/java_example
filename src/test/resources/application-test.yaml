@@ -1,0 +1,16 @@
+logging:
+  file.name: ./log/test.log
+  level:
+    root: INFO
+    src: INFO
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  datasource:
+    url: jdbc:tc:postgresql:15.0:///integration-tests-db
+    username: postgres
+    password: postgres
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver

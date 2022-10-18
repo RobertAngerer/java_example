@@ -1,6 +1,5 @@
 package com.example.demo.company.model;
 
-import javax.persistence.Id;
 import java.util.UUID;
 
 public class Company {
@@ -9,9 +8,22 @@ public class Company {
 
     private String name;
 
-    private String vat_id;
+    private String vatId;
 
+    public Company() {
+    }
 
+    public Company(UUID id, String name, String vatId) {
+        this.id = id;
+        this.name = name;
+        this.vatId = vatId;
+    }
+
+    public Company(String name, String vatId) {
+        this.id = UUID.randomUUID();
+        this.name = name;
+        this.vatId = vatId;
+    }
 
     public UUID getId() {
         return id;
@@ -29,11 +41,11 @@ public class Company {
         this.name = name;
     }
 
-    public String getVat_id() {
-        return vat_id;
+    public String getVatId() {
+        return vatId;
     }
 
-    public void setVat_id(String vat_id) {
-        this.vat_id = vat_id;
+    public void setVatId(String vatId) {
+        this.vatId = vatId;
     }
 }

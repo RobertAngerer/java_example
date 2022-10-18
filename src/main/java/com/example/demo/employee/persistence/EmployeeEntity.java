@@ -1,7 +1,7 @@
 package com.example.demo.employee.persistence;
 
 import com.example.demo.company.persistence.CompanyEntity;
-import com.example.demo.roles.persistence.RoleEntity;
+import com.example.demo.role.persistence.RoleEntity;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -15,6 +15,8 @@ public class EmployeeEntity {
     UUID id;
 
     private String name;
+
+    private Integer number;
 
     @ManyToOne
     @JoinColumn(name = "company_id")
@@ -56,5 +58,13 @@ public class EmployeeEntity {
 
     public void setRoles(Collection<RoleEntity> roles) {
         this.roles = roles;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

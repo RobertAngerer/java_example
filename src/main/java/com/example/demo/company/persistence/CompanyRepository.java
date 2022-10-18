@@ -9,5 +9,6 @@ import java.util.UUID;
 @Repository
 public interface CompanyRepository extends JpaRepository<CompanyEntity, UUID> {
 
+    boolean existsByVatId(String vatId);
 
 }

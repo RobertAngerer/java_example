@@ -1,8 +1,8 @@
-package com.example.demo.roles.persistence;
+package com.example.demo.role.persistence;
 
 
 import com.example.demo.company.persistence.CompanyEntityMapper;
-import com.example.demo.roles.model.Role;
+import com.example.demo.role.model.Role;
 import org.springframework.stereotype.Component;
 
 @Component

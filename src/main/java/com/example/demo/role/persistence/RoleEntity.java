@@ -1,4 +1,4 @@
-package com.example.demo.roles.persistence;
+package com.example.demo.role.persistence;
 
 import com.example.demo.company.persistence.CompanyEntity;
 import com.example.demo.employee.persistence.EmployeeEntity;

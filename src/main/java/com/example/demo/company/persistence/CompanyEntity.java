@@ -21,7 +21,7 @@ public class CompanyEntity {
 
     private String name;
 
-    private String vat_id;
+    private String vatId;
 
     public UUID getId() {
         return id;
@@ -39,11 +39,11 @@ public class CompanyEntity {
         this.name = name;
     }
 
-    public String getVat_id() {
-        return vat_id;
+    public String getVatId() {
+        return vatId;
     }
 
-    public void setVat_id(String vat_id) {
-        this.vat_id = vat_id;
+    public void setVatId(String vat_id) {
+        this.vatId = vat_id;
     }
 }

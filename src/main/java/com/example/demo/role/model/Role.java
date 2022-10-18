@@ -1,11 +1,7 @@
-package com.example.demo.roles.model;
+package com.example.demo.role.model;
 
 import com.example.demo.company.model.Company;
-import com.example.demo.company.persistence.CompanyEntity;
 
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import java.util.UUID;
 
 public class Role {
@@ -17,6 +13,11 @@ public class Role {
     private Company company;
 
     public Role() {
+    }
+
+    public Role(String role) {
+        this.role = role;
+        this.id = UUID.randomUUID();
     }
 
     public Role(UUID id, String role, Company company) {

@@ -1,8 +1,7 @@
-package com.example.demo.roles.persistence;
+package com.example.demo.role.persistence;
 
-import com.example.demo.company.model.Company;
 import com.example.demo.company.persistence.CompanyEntity;
-import com.example.demo.roles.model.Role;
+import com.example.demo.role.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

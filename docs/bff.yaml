@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: Java Starter Api Doc
+  version: 0.1.1
+  description: This is just a starter project
+
+servers:
+  - url: http://api.example.com/api/v1
+
+
+paths:
+  /companies:
+    get:
+      summary: Returns all companies
+      responses:
+        '200':
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type array
+                items:
+                  $ref: "#/components/schemas/companyDto"
+
+components:
+  schemas:
+    companyDto:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        vat_id:
+          type: string

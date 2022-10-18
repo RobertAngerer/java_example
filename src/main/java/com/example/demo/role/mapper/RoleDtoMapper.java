@@ -1,12 +1,10 @@
-package com.example.demo.roles.mapper;
+package com.example.demo.role.mapper;
 
 import com.example.demo.company.mapper.CompanyDtoMapper;
-import com.example.demo.roles.dto.CreateRoleDto;
-import com.example.demo.roles.dto.RoleDto;
-import com.example.demo.roles.model.Role;
+import com.example.demo.role.dto.RoleDto;
+import com.example.demo.role.dto.SimpleRoleDto;
+import com.example.demo.role.model.Role;
 import org.springframework.stereotype.Component;
-
-import java.util.UUID;
 
 @Component
 public class RoleDtoMapper {
@@ -17,15 +15,16 @@ public class RoleDtoMapper {
         this.companyDtoMapper = companyDtoMapper;
     }
 
-    public Role createDtoToModel(CreateRoleDto createRoleDto) {
-        Role role = new Role();
-        role.setId(UUID.randomUUID());
-        role.setRole(createRoleDto.role());
-        return role;
+    public Role dtoToModel(RoleDto roleDto) {
+        return new Role(roleDto.role());
     }
 
     public RoleDto modelToDto(Role role) {
         return new RoleDto(role.getId(), role.getRole(), this.companyDtoMapper.modelToDto(role.getCompany()));
+    }
+
+    public SimpleRoleDto modelToSimpleDto(Role role) {
+        return new SimpleRoleDto(role.getId(), role.getRole());
     }
 
 }
