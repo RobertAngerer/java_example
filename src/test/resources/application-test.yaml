@@ -7,7 +7,7 @@ logging:
 spring:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
     show-sql: true
   datasource:
     url: jdbc:tc:postgresql:15.0:///integration-tests-db
