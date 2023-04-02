@@ -19,6 +19,6 @@ public record EmployeeDto(
         @JsonProperty(access = JsonProperty.Access.READ_ONLY)
         CompanyDto companyDto,
         @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-        Collection<SimpleRoleDto> simpleRoleDtos
+        Collection<SimpleRoleDto> roleDtos
 ) {
 }

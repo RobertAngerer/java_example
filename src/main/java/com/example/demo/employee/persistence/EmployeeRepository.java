@@ -16,5 +16,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeEntity, UUID> 
 
     public List<EmployeeEntity> findAllByCompanyEntity(CompanyEntity companyEntity);
 
+    public List<EmployeeEntity> findAllByCompanyEntityId(UUID companyId);
     public boolean existsByNumber(Integer number);
 }
