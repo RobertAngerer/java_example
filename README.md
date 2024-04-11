@@ -26,3 +26,6 @@
     + Es sollte Tests (mit jUnit 5) in irgendeiner Ausprägung geben
 + Optional
     + Die PostgreSQL Datenbank und die Applikation soll mit docker-compose gestartet werden können.
+
+
+    test
